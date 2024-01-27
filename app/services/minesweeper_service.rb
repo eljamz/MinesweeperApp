@@ -5,7 +5,8 @@ class MinesweeperService
 
     # Randomly place mines
     mines_count.times do
-      x, y = rand(width), rand(height)
+      x = rand(width)
+      y = rand(height)
       board[y][x] = 'X' # 'X' represents a mine
     end
 
