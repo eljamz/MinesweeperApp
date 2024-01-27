@@ -42,3 +42,7 @@
     <%= form.submit "Generate Board" %>
   </div>
 <% end %>
+
+<div class="row show_breadcrums">
+  <%= link_to 'Home', root_path, class: 'btn btn-secondary' %> | <%= link_to 'View all generated boards', all_boards_path, class: 'btn btn-info' %>
+</div>
