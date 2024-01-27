@@ -1,8 +1,10 @@
 <h1>Recent Boards</h1>
-<%= link_to 'Create New Board', new_board_path, class: 'btn btn-primary' %>
+
 
 <ul>
   <%= render partial: 'board_info', collection: @recent_boards, as: :board %>
 </ul>
 
-<%= link_to 'View All Boards', all_boards_path, class: 'btn btn-info' %>
+<div class="row">
+  <%= link_to 'Create New Board', new_board_path, class: 'btn btn-primary' %> | <%= link_to 'View all generated boards', all_boards_path, class: 'btn btn-info' %>
+</div>
