@@ -23,6 +23,10 @@ class BoardsController < ApplicationController
     @board = Board.find(params[:id])
   end
 
+  def all
+    @all_boards = Board.order(created_at: :desc)
+  end
+
   private
 
   def board_params

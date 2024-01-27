@@ -1,0 +1,5 @@
+<li>
+  <%= link_to board.name, board_path(board) %>
+  <p>Created by: <%= board.email %></p>
+  <p>Created at: <%= board.created_at.strftime("%d %b %Y %H:%M") %></p>
+</li>
