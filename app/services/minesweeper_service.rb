@@ -11,10 +11,11 @@ class MinesweeperService
       y = rand(height)
 
       # Place a mine only if there isn't one already
-      if (board[y][x]) == 0
-        board[y][x] = 'X' # 'X' represents a mine
-        placed_mines += 1
-      end
+      # rubocop:disable Style/NumericPredicate
+      next unless (board[y][x]) == 0
+      # rubocop:enable Style/NumericPredicate
+      board[y][x] = 'X' # 'X' represents a mine
+      placed_mines += 1
     end
 
     # Return the board

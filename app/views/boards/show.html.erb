@@ -1,5 +1,5 @@
-<h1><%= @board.name %></h1>
-<p>By: <%= @board.email %> @ <%= @board.created_at.strftime("%d %b %Y %H:%M") %></p>
+<h1 class="no_padding"><%= @board.name %></h1>
+<p class="extra_board_info">By: <%= @board.email %> @ <%= @board.created_at.strftime("%d %b %Y %H:%M") %></p>
 
 <div class="minesweeper-board">
   <% @board.board_state.each do |row| %>
@@ -17,4 +17,6 @@
   <% end %>
 </div>
 
-<%= link_to 'Back to Index', root_path, class: 'btn btn-secondary' %>
+<div class="row show_breadcrums">
+  <%= link_to 'Home', root_path, class: 'btn btn-secondary' %> | <%= link_to 'View all generated boards', all_boards_path, class: 'btn btn-info' %> |  <%= link_to 'Create New Board', new_board_path, class: 'btn btn-primary' %>
+</div>

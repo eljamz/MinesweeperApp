@@ -44,3 +44,12 @@ ul {
   padding: 0;
   list-style-type: none;
 }
+
+.no_padding {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.show_breadcrums {
+  margin-top: 10px;
+}

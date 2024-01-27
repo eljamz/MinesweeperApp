@@ -1,9 +1,8 @@
 class BoardsController < ApplicationController
-
   def index
     @recent_boards = Board.order(created_at: :desc).limit(10)
   end
-  
+
   def new
     @board = Board.new
   end
@@ -24,7 +23,14 @@ class BoardsController < ApplicationController
   end
 
   def all
-    @boards = Board.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+    @boards = if params[:search].present?
+                Board.where('name LIKE ? OR email LIKE ?',
+                  "%#{params[:search]}%",
+                  "%#{params[:search]}%")
+                  .paginate(page: params[:page], per_page: 10)
+              else
+                Board.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+              end
   end
 
   private
