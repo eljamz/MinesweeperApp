@@ -1,12 +1,18 @@
 <h1><%= @board.name %></h1>
 <p>Created by: <%= @board.email %></p>
 
-<table>
+<div class="minesweeper-board">
   <% @board.board_state.each do |row| %>
-    <tr>
+    <div class="minesweeper-row">
       <% row.each do |cell| %>
-        <td><%= cell %></td>
+        <div class="minesweeper-cell">
+          <% if cell == 'X' %>
+            <i class="fas fa-bomb mine-color"></i>
+          <% else %>
+            <i class="fas fa-square"></i>
+          <% end %>
+        </div>
       <% end %>
-    </tr>
+    </div>
   <% end %>
-</table>
+</div>

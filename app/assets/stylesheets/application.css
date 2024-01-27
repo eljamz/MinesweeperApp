@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+ .minesweeper-board {
+  display: flex;
+  flex-direction: column;
+}
+
+.minesweeper-row {
+  display: flex;
+}
+
+.minesweeper-cell {
+  width: 30px; /* Adjust size as needed */
+  height: 30px; /* Adjust size as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -1px -1px 0 0; /* Removes double borders */
+}
+
+.mine-color {
+  color: #ffb300;
+}
