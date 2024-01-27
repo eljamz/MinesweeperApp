@@ -1,0 +1,12 @@
+<h1>Recent Boards</h1>
+<%= link_to 'Create New Board', new_board_path, class: 'btn btn-primary' %>
+
+<ul>
+  <% @recent_boards.each do |board| %>
+    <li>
+      <%= link_to board.name, board_path(board) %>
+      <p>Created by: <%= board.email %></p>
+      <p>Created at: <%= board.created_at.strftime("%d %b %Y %H:%M") %></p>
+    </li>
+  <% end %>
+</ul>

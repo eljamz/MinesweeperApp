@@ -1,4 +1,9 @@
 class BoardsController < ApplicationController
+
+  def index
+    @recent_boards = Board.order(created_at: :desc).limit(10)
+  end
+  
   def new
     @board = Board.new
   end
