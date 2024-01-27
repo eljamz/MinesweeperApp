@@ -1,5 +1,7 @@
 <h1>All Boards</h1>
 
 <ul>
-  <%= render partial: 'board_info', collection: @all_boards, as: :board %>
+  <%= render partial: 'board_info', collection: @boards, as: :board %>
 </ul>
+
+<%= will_paginate @boards %>

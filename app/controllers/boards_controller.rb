@@ -24,7 +24,7 @@ class BoardsController < ApplicationController
   end
 
   def all
-    @all_boards = Board.order(created_at: :desc)
+    @boards = Board.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
   end
 
   private
