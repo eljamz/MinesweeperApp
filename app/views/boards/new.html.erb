@@ -1,0 +1,44 @@
+<h1>Create a New Minesweeper Board</h1>
+
+<%= form_with(model: @board, local: true) do |form| %>
+  <% if @board.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@board.errors.count, "error") %> prohibited this board from being saved:</h2>
+
+      <ul>
+      <% @board.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :board_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email, id: :board_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :width %>
+    <%= form.number_field :width, id: :board_width %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.number_field :height, id: :board_height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mines_count %>
+    <%= form.number_field :mines_count, id: :board_mines_count %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Generate Board" %>
+  </div>
+<% end %>

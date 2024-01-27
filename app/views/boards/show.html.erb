@@ -1,0 +1,12 @@
+<h1><%= @board.name %></h1>
+<p>Created by: <%= @board.email %></p>
+
+<table>
+  <% @board.board_state.each do |row| %>
+    <tr>
+      <% row.each do |cell| %>
+        <td><%= cell %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
