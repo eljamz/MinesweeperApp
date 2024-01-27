@@ -9,3 +9,7 @@
 </ul>
 
 <%= will_paginate @boards %>
+
+<div class="row show_breadcrums">
+  <%= link_to 'Home', root_path, class: 'btn btn-secondary' %> | <%= link_to 'Create New Board', new_board_path, class: 'btn btn-primary' %>
+</div>
