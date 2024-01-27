@@ -1,5 +1,5 @@
 <h1><%= @board.name %></h1>
-<p>Created by: <%= @board.email %></p>
+<p>By: <%= @board.email %> @ <%= @board.created_at.strftime("%d %b %Y %H:%M") %></p>
 
 <div class="minesweeper-board">
   <% @board.board_state.each do |row| %>

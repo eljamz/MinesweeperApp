@@ -34,3 +34,12 @@
 .mine-color {
   color: #ffb300;
 }
+
+.extra_board_info {
+  margin-top: 5px;
+  font-size: small;
+}
+
+ul {
+  list-style-type: none;
+}
